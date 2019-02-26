@@ -1,0 +1,5 @@
+startar o tomcat
+
+URL: http://10.25.1.27:8080/test/
+
+Path: C:\xampp\tomcat\webapps\test
