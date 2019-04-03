@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server;
 
 /**
  *
@@ -15,28 +14,46 @@ import java.util.*;
 import java.io.*;
 
 public class server{
-    int porta = port;
+    private int porta;
+    private ServerSocket ss;
+    private Socket s;
+    private OutputStream os;
     //Date d = new Date();
+    /*/
+    public server(int porta){
+        this.porta = porta;
+    }
+    */
     public server(){
+    
+    }
+    
+    public server(int porta){
+        this.porta = porta;
         try{
-            ServerSocket ss = new ServerSocket(porta);
+            ss = new ServerSocket(porta);
             System.out.println("Agrardando...");
-            Socket s = ss.accept();
-            FileOutputStream d = new FileOutputStream("d.txt");
-            PrintWriter pr = new PrintWriter(d);
-            pr.println("Isaque Kaio é bonitão!!!");
-            pr.close();
-            d.close();
-            OutputStream os = s.getOutputStream();
-            //ObjectInputStream os = new ObjectInputStream(s.getInputStream()); 
-            os.write(d.toString().getBytes());//write
-            os.close();
+            s = ss.accept();
+       
         }catch(IOException ioe){
             ioe.printStackTrace();
         }
-    }
-    public static void main(String args[]){
         
+    }
+    
+    public void enviar() throws FileNotFoundException, IOException {
+        FileOutputStream d = new FileOutputStream("d.txt");
+        PrintWriter pr = new PrintWriter(d);
+        pr.println("Isaque Kaio é bonitão!!!");
+        pr.close();
+        d.close();
+        OutputStream os = s.getOutputStream();
+        //ObjectInputStream os = new ObjectInputStream(s.getInputStream()); 
+        os.write(d.toString().getBytes());//write
+        os.close();
+    }
+    
+    public static void main(String args[]){
         server s = new server();
     }
 }

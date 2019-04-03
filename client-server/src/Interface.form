@@ -31,7 +31,7 @@
                       <Component id="abrir" min="-2" pref="114" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="enviar" min="-2" pref="115" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Component id="config" min="-2" pref="115" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -45,18 +45,21 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="texto" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="abrir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="enviar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="config" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="config" pref="31" max="32767" attributes="0"/>
+                  <Component id="enviar" max="32767" attributes="0"/>
+                  <Component id="abrir" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="texto">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="abrir">
       <Properties>
