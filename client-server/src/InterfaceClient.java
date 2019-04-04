@@ -13,12 +13,12 @@ import java.util.logging.Logger;
  *
  * @author 20172014040034
  */
-public class Interface extends javax.swing.JFrame {
+public class InterfaceClient extends javax.swing.JFrame {
 
     /**
      * Creates new form Interface
      */
-    public Interface() {
+    public InterfaceClient() {
         initComponents();
     }
 
@@ -46,7 +46,7 @@ public class Interface extends javax.swing.JFrame {
 
         abrir.setText("Abrir...");
 
-        enviar.setText("Enviar");
+        enviar.setText("receber");
         enviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enviarActionPerformed(evt);
@@ -94,11 +94,11 @@ public class Interface extends javax.swing.JFrame {
 
     private void enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarActionPerformed
         // TODO add your handling code here:
-        client c = new client();
+        client c = new client("localhost", 12345);
         try {
-            c.receber();
+            texto.setText(c.receber());
         } catch (IOException ex) {
-            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InterfaceClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_enviarActionPerformed
 
@@ -130,20 +130,23 @@ public class Interface extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interface().setVisible(true);
+                new InterfaceClient().setVisible(true);
             }
         });
     }

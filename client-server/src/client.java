@@ -43,12 +43,12 @@ public class client{
             byte[] b = new byte[1000];
             is.read(b);//read
             is.close();
-            //System.out.println("Dados: "+new String(b).trim());
+            System.out.println("Dados: "+new String(b).trim());
             return new String(b).trim();
     }
     
     
     public static void main(String args[]){
-        client c = new client();
+        
     }
 }
