@@ -15,12 +15,12 @@ class calculadora:
         return int(x/y)
 
 print("Servidor iniciado")
-daemon = Pyro4.Daemon()         #make a Pyro daemon
+daemon = Pyro4.Daemon()             #faça um daemon do Pyro ()
 
-uri = daemon.register(calculadora) #register the Saudacao make as a Pyro object
-ns = Pyro4.locateNS()           #find the name server
-ns.register('obj', uri)         #register the object with a name in the name server
+uri = daemon.register(calculadora)  #registra a calculadora como um objeto Pyro
+ns = Pyro4.locateNS()               #encontre o servidor de nomes
+ns.register('obj', uri)             #registre o objeto com um nome no servidor de nomes
 print(uri)
 
-print("Proxy iniciado")         # start the event loop of the server to wait for calls
+print("Proxy iniciado")             #iniciar o loop de eventos do servidor para aguardar chamadas
 daemon.requestLoop()
