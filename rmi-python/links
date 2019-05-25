@@ -10,3 +10,7 @@ criar venv: python3 -m venv nome_venv
 executar venv: source venv/bin/activate
 
 italar o pyro4: pip install pyro4
+
+O que é Pyro4 ?
+É uma biblioteca que permite criar aplicativos nos quais os objetos podem se comunicar pela rede, com o mínimo de esforço de programação. 
+
