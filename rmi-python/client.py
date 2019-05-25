@@ -2,7 +2,7 @@ import Pyro4
 
 ns = Pyro4.locateNS()
 
-uri = ns.lookup('obj')
+uri = ns.lookup('obj')    #o servidor de nomes para facilitar a pesquisa de objetos.
 
 #o = Pyro4.Proxy("PYRO:Pyro.NameServer@localhost:9090")
 x=int(input("Digite um numero: "))
