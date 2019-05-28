@@ -1,0 +1,24 @@
+video: https://www.youtube.com/watch?v=gFsIGJR5R8I
+documentação: https://www.django-rest-framework.org/
+
+
+virtual venv
+    python3 -m venv venv
+    source venv/bin/activate
+    . venv/bin/activate
+
+django
+    pip install django
+
+Django Rest Framework
+    pip install djangorestframework
+    pip install markdown       # Markdown support for the browsable API.
+    pip install django-filter  # Filtering support
+
+projeto django
+    django-admin startproject api
+    python manage.py startapp core
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py makemigrations
+
